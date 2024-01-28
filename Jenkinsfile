@@ -10,7 +10,7 @@ node {
     }
 
     stage('Build'){
-        sh "mvn clean install"
+        sh "mvn clean install -U"
     }
 
     stage("Image Prune"){
