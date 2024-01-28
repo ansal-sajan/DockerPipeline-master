@@ -1,6 +1,6 @@
 def containerName="docker-pipeline"
 def tag="latest"
-def dockerHubUser="anujsharma1990"
+def dockerHubUser="ansalsajan"
 def httpPort="8090"
 
 node {
@@ -37,12 +37,12 @@ node {
         sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
         echo "Application started on port: ${httpPort} (http)"
         */
-        sh """
+       /* sh """
            kubectl get pods
            kubectl delete deployment kubernetes-bootcamp | true
            kubectl create deployment kubernetes-bootcamp --image=docker.io/anujsharma1990/docker-pipeline --port=8090
            kubectl get pods
-        """
+        """ */
     }
 
 }
